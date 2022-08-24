@@ -1,0 +1,37 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: rgb(238, 225, 216); 
+    
+}
+.tt{
+    text-align: center;
+    width: 350px;
+    /* PAra que quede siempre en el centro */
+    margin: 40px auto;
+    /* La letra */
+    font-size: 25px;
+}
+
+.login {
+    width: 350px;
+    /* PAra que quede siempre en el centro */
+    margin: 16px auto;
+    /* La letra */
+    font-size: 16px;
+  }
+  .boton_2{
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    color: black;
+    background-color: #cfcccc;
+  }
+  .boton_2:hover{
+    color: #000000;
+    background-color: #ffe0db;
+  }

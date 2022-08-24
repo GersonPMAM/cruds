@@ -4,30 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Ingreso Post</title>
 </head>
 <body>
-    <h1>ingreso de POst</h1>
-    <br>
-    <br>
 
-    <form action="{{route('post.store')}}" method="post">
-    @csrf
+    <main>
+        <div class="tt">
+            <h1>Ingreso de Post</h1>
+        </div>
+    
 
-    <label for="">Titulo</label>
-    <input type="text" name ="title">
+        <form action="{{route('post.store')}}" method="post">
+            @csrf
 
-    <label for="">Url Corta</label>
-    <input type="text" name ="slug">
 
-    <label for="">Contenido</label>
-    <textarea name="content"></textarea>
+            <div class="login">
+                <section class="row ">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="">Titulo</label>
+                    <br>
+                    <input type="text" name ="title">
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="">Url Corta</label>
+                    <br>
+                    <input type="text" name ="slug">
+                </div>
+                </section> 
+            </div>
+            
 
-    <label for="">Descripcion</label>
-    <textarea name="description"></textarea>
-
-    <button type="submit">Enviar</button>
-    </form>
+            <div class="login">
+                <section class="row ">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                            <label for="">Contenido</label>
+                            <br>
+                            <textarea name="content"></textarea>
+                        </div>
+                        
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <label for="">Descripcion</label>
+                            <br>
+                            <textarea name="description" id="" cols="45" rows="10"></textarea>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <br>
+                        <button class="boton_2"> Enviar </button>   
+                    </div>
+                </section>
+            </div>
+        </form>
+    </main>
     
 </body>
 </html>
