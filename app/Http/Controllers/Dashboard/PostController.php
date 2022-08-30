@@ -48,6 +48,11 @@ class PostController extends Controller
         echo "Valdacion".$request->title; */
         echo "El titulo trae ".$request->title;
         Post::create($request->validated());
+        /* Para limpiar */
+        /* return back(); */
+        /* Primero la ubicacion y apunta a una nueva funcion si la secion esta activa*/
+        /* return redirect('post.create')->with('status','Post created'); */
+        return back()->with('status','Muchas gracias su post fue creado con exito');
     }
 
     /**

@@ -30,6 +30,18 @@
         @endforeach
         @endif -->
             @csrf
+
+
+            <!-- si hay una seccion con estatus levantado que imoprima el segundo y despues de imprimirlo la secion se baja 
+        se desencadena una sola vez-->
+            @if(session('status'))
+
+            <div class="alert alert-success">
+                {{session('status')}}
+            </div>
+            @endif
+
+
             <div class="login">
                 <section class="row ">
                 <div class="col-xs-6 col-sm-6 col-md-6">
