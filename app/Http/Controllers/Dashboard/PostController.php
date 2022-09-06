@@ -17,7 +17,9 @@ class PostController extends Controller
     public function index()
     {
         
-        //
+        //definiendo una variable post que es lo que recibe el index, para ordenaralo, el primer campo es el para metro y el segundo es como, para cambiar pagina cursorpagenate y el 5 define los datos a ver, el echo view es para in vocar y lo de corchetes es mandarle es un arreglo que contiene los datos, el $ es la variable.
+        $posts=Post::orderBy('created_at','desc')->cursorpaginate(5);    
+        echo view ('dashboard.post.index',['posts'=>$posts]);
     }
 
     /**
@@ -29,7 +31,6 @@ class PostController extends Controller
     {
         echo view ('dashboard.post.create');
         //
-
     }
 
     /**
@@ -53,6 +54,7 @@ class PostController extends Controller
         /* Primero la ubicacion y apunta a una nueva funcion si la secion esta activa*/
         /* return redirect('post.create')->with('status','Post created'); */
         return back()->with('status','Muchas gracias su post fue creado con exito');
+        /* pagina regresa solo a la pagina pero cuando apunta a un with  */
     }
 
     /**

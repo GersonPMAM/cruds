@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    
 
     <title>Ingreso Post</title>
 </head>
@@ -21,18 +22,18 @@
 
     <main>
         <div class="tt">
-            <h1>Ingreso de Post</h1>
+            <h1>Ingreso de categorias</h1>
         </div>
        
 
-    <form action="{{route('post.store')}}" method="post">
-        <!-- Incluimo el archo que esta en la ruta -->
+    <form action="{{route('category.store')}}" method="post">
     @include('dashboard.partials.sesion-flash-status')
+
 
             <div class="login">
                 <section class="row ">
                 <div class="col-xs-6 col-sm-6 col-md-6">
-                    <label for="">Titulo</label>
+                    <label for="">Categoria</label>
                     <br>
                     <input type="text" name ="title">
                     @error('title')
@@ -58,31 +59,10 @@
 
             <div class="login">
                 <section class="row ">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                            <label for="">Contenido</label>
-                            <br>
-                            <textarea name="content"></textarea>
-                            @error('content')
-                            <small calss="text-danger">
-                                {{$message}}
-                            </small>
-                            @enderror
-                        </div>
-                        
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <label for="">Descripcion</label>
-                            <br>
-                            <textarea name="description" id="" cols="45" rows="10"></textarea>
-                            @error('description')
-                            <small calss="text-danger">
-                                {{$message}}
-                            </small>
-                            @enderror
-                        </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <br>
-                        <button class="boton_2"> Enviar </button>   
-                    </div>
+                            <button class="boton_2"> Enviar </button>   
+                        </div>
                 </section>
             </div>
         </form>
