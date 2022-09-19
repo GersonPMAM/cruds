@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-    
 
     <title>Ingreso Post</title>
 </head>
@@ -22,12 +21,15 @@
 
     <main>
         <div class="tt">
-            <h1>Ingreso de categorias</h1>
+            <h1>Ingreso de Post</h1>
         </div>
        
 
-    <form action="{{route('category.store')}}" method="post">
-    @include('dashboard.partials._form2')
+    <form action="{{route('post.update',$post->id)}}" method="post">
+        <!-- Le decimos que es post pero en realidad es PUT-->
+            @method('PUT')
+            @include('dashboard.partials._form')
+     </form>
     </main>
 </body>
 </html>

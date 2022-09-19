@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
     
 
-    <title>Ingreso Post</title>
+    <title>Ingreso Category</title>
 </head>
 <body>
 <header>
@@ -27,7 +27,32 @@
        
 
     <form action="{{route('category.store')}}" method="post">
-    @include('dashboard.partials._form2')
+            <div class="login">
+                <section class="row ">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="">Categoria</label>
+                    <br>
+                    <input readonly type="text" name ="title" value="{{$category->title}}">
+                    @error('title')
+                    <small calss="text-danger">
+                        {{$message}}
+                    </small>
+                    @enderror
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <label for="">Url Corta</label>
+                    <br>
+                    <input type="text" name ="slug"  value="{{$category->slug}}">
+                    @error('slug')
+                    <small calss="text-danger">
+                        {{$message}}
+                    </small>
+                    @enderror
+                </div>
+                </section> 
+            </div>
+
+        </form>
     </main>
 </body>
 </html>

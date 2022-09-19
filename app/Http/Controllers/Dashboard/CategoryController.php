@@ -29,7 +29,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        echo view ('dashboard.category.create');
+        echo view ('dashboard.category.create',['category'=>new category()]);
     }
 
     /**
@@ -57,6 +57,7 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         //
+        echo view ('dashboard.category.show',["category" =>$category]);
     }
 
     /**
@@ -68,6 +69,7 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         //
+        echo view('dashboard.category.edit',['category'=> $category]);
     }
 
     /**
@@ -77,9 +79,11 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(StoreCategoryCategory $request, Category $category)
     {
         //
+        $category->update($request->validated());
+        return back()->with('status','Muchas gracias tu post fue actualizado con exito');
     }
 
     /**
@@ -91,5 +95,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category->delete();
+        return back()->with('status','Post Borrado con exito');
     }
 }

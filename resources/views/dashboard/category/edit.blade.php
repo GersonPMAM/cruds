@@ -22,12 +22,14 @@
 
     <main>
         <div class="tt">
-            <h1>Ingreso de categorias</h1>
+            <h1>Edicion de categorias</h1>
         </div>
        
 
-    <form action="{{route('category.store')}}" method="post">
-    @include('dashboard.partials._form2')
+    <form action="{{route('category.update',$category->id)}}" method="post">
+        @method('PUT')
+        @include('dashboard.partials._form2')
+        </form>
     </main>
 </body>
 </html>

@@ -65,6 +65,15 @@
                             <td>
                                 {{$cat->updated_at->format('d-m-Y')}}
                             </td>
+                            <td>
+                                <a href="{{route('category.show',$cat->id)}}" class="btn btn-primary">ver</a>
+                                <a href="{{route('category.edit',$cat->id)}}" class="btn btn-primary">Actualizar</a>
+                                <form method="POST" action="{{route('category.destroy',$cat->id)}}">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button class="btn btn-danger" type="submit">Borrar</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </thead>                
